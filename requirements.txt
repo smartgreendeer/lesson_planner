@@ -1,0 +1,6 @@
+gradio
+nltk
+asyncio
+PyPDF2
+nltk.probability
+nltk.stem

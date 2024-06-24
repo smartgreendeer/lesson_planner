@@ -1,0 +1,36 @@
+# asyncflows-language-server
+application_flow:
+  - step: Upload_or_Paste_Text
+    description: >
+      User uploads a PDF file or pastes/inputs text from the textbook.
+    inputs:
+      - type: File_Upload
+        description: User uploads a PDF file containing textbook content.
+      - type: Text_Input
+        description: User pastes or types text directly into the textbox.
+    outputs:
+      - description: Processed text ready for lesson plan generation.
+
+  - step: Text_Preprocessing
+    description: >
+      Clean and prepare the text using NLTK (tokenization, stop words removal, stemming).
+    inputs:
+      - description: Processed text from previous step.
+    outputs:
+      - description: Preprocessed text ready for analysis.
+
+  - step: Generate_Lesson_Plan
+    description: >
+      Generate a structured lesson plan based on the preprocessed text.
+    inputs:
+      - description: Preprocessed text.
+    outputs:
+      - description: Generated lesson plan in JSON format.
+
+  - step: Display_Output
+    description: >
+      Display the generated lesson plan to the user.
+    inputs:
+      - description: Generated lesson plan in JSON format.
+    outputs:
+      - description: User interface displays the structured lesson plan.
